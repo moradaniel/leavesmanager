@@ -1,11 +1,16 @@
 package org.sab.invsys.persistence.model.user;
 
-import static com.mysema.query.types.PathMetadataFactory.*;
-
-import com.mysema.query.types.*;
-import com.mysema.query.types.path.*;
+import static com.mysema.query.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
+
+import com.mysema.query.types.PathMetadata;
+import com.mysema.query.types.path.DateTimePath;
+import com.mysema.query.types.path.EntityPathBase;
+import com.mysema.query.types.path.NumberPath;
+import com.mysema.query.types.path.PathInits;
+import com.mysema.query.types.path.SetPath;
+import com.mysema.query.types.path.StringPath;
 
 
 /**
@@ -54,13 +59,13 @@ public class QUser extends EntityPathBase<User> {
 
     public final StringPath password = createString("password");
 
-    public final SetPath<org.sab.invsys.persistence.model.order.purchase.PurchaseOrder, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder> purchaseOrder = this.<org.sab.invsys.persistence.model.order.purchase.PurchaseOrder, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder>createSet("purchaseOrder", org.sab.invsys.persistence.model.order.purchase.PurchaseOrder.class, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder.class);
+    public final SetPath<org.sab.invsys.persistence.model.order.purchase.PurchaseOrder, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder> purchaseOrder = this.<org.sab.invsys.persistence.model.order.purchase.PurchaseOrder, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder>createSet("purchaseOrder", org.sab.invsys.persistence.model.order.purchase.PurchaseOrder.class, org.sab.invsys.persistence.model.order.purchase.QPurchaseOrder.class, PathInits.DIRECT);
 
     public final QRole role;
 
     public final StringPath username = createString("username");
 
-    public final SetPath<org.sab.invsys.persistence.model.payments.UserPayment, org.sab.invsys.persistence.model.payments.QUserPayment> userPayments = this.<org.sab.invsys.persistence.model.payments.UserPayment, org.sab.invsys.persistence.model.payments.QUserPayment>createSet("userPayments", org.sab.invsys.persistence.model.payments.UserPayment.class, org.sab.invsys.persistence.model.payments.QUserPayment.class);
+    public final SetPath<org.sab.invsys.persistence.model.payments.UserPayment, org.sab.invsys.persistence.model.payments.QUserPayment> userPayments = this.<org.sab.invsys.persistence.model.payments.UserPayment, org.sab.invsys.persistence.model.payments.QUserPayment>createSet("userPayments", org.sab.invsys.persistence.model.payments.UserPayment.class, org.sab.invsys.persistence.model.payments.QUserPayment.class, PathInits.DIRECT);
 
     public QUser(String variable) {
         this(User.class, forVariable(variable), INITS);

@@ -20,7 +20,7 @@ public class QPurchaseOrder extends EntityPathBase<PurchaseOrder> {
 
     public static final QPurchaseOrder purchaseOrder = new QPurchaseOrder("purchaseOrder");
 
-    public final SetPath<PurchaseOrderCharges, QPurchaseOrderCharges> charges = this.<PurchaseOrderCharges, QPurchaseOrderCharges>createSet("charges", PurchaseOrderCharges.class, QPurchaseOrderCharges.class);
+    public final SetPath<PurchaseOrderCharges, QPurchaseOrderCharges> charges = this.<PurchaseOrderCharges, QPurchaseOrderCharges>createSet("charges", PurchaseOrderCharges.class, QPurchaseOrderCharges.class, PathInits.DIRECT);
 
     public final StringPath comments = createString("comments");
 
@@ -34,7 +34,7 @@ public class QPurchaseOrder extends EntityPathBase<PurchaseOrder> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final SetPath<PurchaseOrderItems, QPurchaseOrderItems> items = this.<PurchaseOrderItems, QPurchaseOrderItems>createSet("items", PurchaseOrderItems.class, QPurchaseOrderItems.class);
+    public final SetPath<PurchaseOrderItems, QPurchaseOrderItems> items = this.<PurchaseOrderItems, QPurchaseOrderItems>createSet("items", PurchaseOrderItems.class, QPurchaseOrderItems.class, PathInits.DIRECT);
 
     public final NumberPath<Integer> modifiedBy = createNumber("modifiedBy", Integer.class);
 
@@ -48,7 +48,7 @@ public class QPurchaseOrder extends EntityPathBase<PurchaseOrder> {
 
     public final StringPath referenceNumber = createString("referenceNumber");
 
-    public final SetPath<PurchaseOrderTaxes, QPurchaseOrderTaxes> taxes = this.<PurchaseOrderTaxes, QPurchaseOrderTaxes>createSet("taxes", PurchaseOrderTaxes.class, QPurchaseOrderTaxes.class);
+    public final SetPath<PurchaseOrderTaxes, QPurchaseOrderTaxes> taxes = this.<PurchaseOrderTaxes, QPurchaseOrderTaxes>createSet("taxes", PurchaseOrderTaxes.class, QPurchaseOrderTaxes.class, PathInits.DIRECT);
 
     public final NumberPath<Long> total = createNumber("total", Long.class);
 

@@ -1,11 +1,16 @@
 package org.sab.invsys.persistence.model.order.sales;
 
-import static com.mysema.query.types.PathMetadataFactory.*;
-
-import com.mysema.query.types.*;
-import com.mysema.query.types.path.*;
+import static com.mysema.query.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
+
+import com.mysema.query.types.PathMetadata;
+import com.mysema.query.types.path.DateTimePath;
+import com.mysema.query.types.path.EntityPathBase;
+import com.mysema.query.types.path.NumberPath;
+import com.mysema.query.types.path.PathInits;
+import com.mysema.query.types.path.SetPath;
+import com.mysema.query.types.path.StringPath;
 
 
 /**
@@ -20,7 +25,7 @@ public class QSalesOrder extends EntityPathBase<SalesOrder> {
 
     public static final QSalesOrder salesOrder = new QSalesOrder("salesOrder");
 
-    public final SetPath<SalesOrderCharges, QSalesOrderCharges> charges = this.<SalesOrderCharges, QSalesOrderCharges>createSet("charges", SalesOrderCharges.class, QSalesOrderCharges.class);
+    public final SetPath<SalesOrderCharges, QSalesOrderCharges> charges = this.<SalesOrderCharges, QSalesOrderCharges>createSet("charges", SalesOrderCharges.class, QSalesOrderCharges.class, PathInits.DIRECT);
 
     public final StringPath comments = createString("comments");
 
@@ -34,7 +39,7 @@ public class QSalesOrder extends EntityPathBase<SalesOrder> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final SetPath<SalesOrderItems, QSalesOrderItems> items = this.<SalesOrderItems, QSalesOrderItems>createSet("items", SalesOrderItems.class, QSalesOrderItems.class);
+    public final SetPath<SalesOrderItems, QSalesOrderItems> items = this.<SalesOrderItems, QSalesOrderItems>createSet("items", SalesOrderItems.class, QSalesOrderItems.class, PathInits.DIRECT);
 
     public final NumberPath<Integer> modifiedBy = createNumber("modifiedBy", Integer.class);
 
@@ -48,7 +53,7 @@ public class QSalesOrder extends EntityPathBase<SalesOrder> {
 
     public final StringPath referenceNumber = createString("referenceNumber");
 
-    public final SetPath<SalesOrderTaxes, QSalesOrderTaxes> taxes = this.<SalesOrderTaxes, QSalesOrderTaxes>createSet("taxes", SalesOrderTaxes.class, QSalesOrderTaxes.class);
+    public final SetPath<SalesOrderTaxes, QSalesOrderTaxes> taxes = this.<SalesOrderTaxes, QSalesOrderTaxes>createSet("taxes", SalesOrderTaxes.class, QSalesOrderTaxes.class, PathInits.DIRECT);
 
     public final NumberPath<Long> total = createNumber("total", Long.class);
 

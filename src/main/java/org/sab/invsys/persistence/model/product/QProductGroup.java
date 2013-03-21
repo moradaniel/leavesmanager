@@ -1,11 +1,17 @@
 package org.sab.invsys.persistence.model.product;
 
-import static com.mysema.query.types.PathMetadataFactory.*;
-
-import com.mysema.query.types.*;
-import com.mysema.query.types.path.*;
+import static com.mysema.query.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
+
+import com.mysema.query.types.Path;
+import com.mysema.query.types.PathMetadata;
+import com.mysema.query.types.path.DateTimePath;
+import com.mysema.query.types.path.EntityPathBase;
+import com.mysema.query.types.path.NumberPath;
+import com.mysema.query.types.path.PathInits;
+import com.mysema.query.types.path.SetPath;
+import com.mysema.query.types.path.StringPath;
 
 
 /**
@@ -32,7 +38,7 @@ public class QProductGroup extends EntityPathBase<ProductGroup> {
 
     public final DateTimePath<java.util.Date> modifiedDate = createDateTime("modifiedDate", java.util.Date.class);
 
-    public final SetPath<Product, QProduct> product = this.<Product, QProduct>createSet("product", Product.class, QProduct.class);
+    public final SetPath<Product, QProduct> product = this.<Product, QProduct>createSet("product", Product.class, QProduct.class, PathInits.DIRECT);
 
     public QProductGroup(String variable) {
         super(ProductGroup.class, forVariable(variable));

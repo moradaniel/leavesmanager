@@ -19,7 +19,7 @@ public class EmbeddedTomcatLauncher {
 
         tomcat.setPort(Integer.valueOf(webPort));
         
-        String contextPath = "/sampleinvoice"; 
+        String contextPath = "/leavesmanager"; 
         //String appBase = "/opt/tomcat7/webapps/examples";
         String webappDirLocation = "src/main/webapp/";
         tomcat.addWebapp(contextPath, new File(webappDirLocation).getAbsolutePath());
